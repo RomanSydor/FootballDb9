@@ -1,0 +1,34 @@
+﻿@using FootballDb9.Controllers;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RESULT</h2>
+
+<table class="table table-bordered">
+    <thead>
+    @foreach (var vh in ViewBag.Header)
+    {
+        <tr class="success">
+            @foreach (var dh in vh)
+            {
+                <th>
+                    @dh
+                </th>
+            }
+            </tr>
+    }
+    </thead>
+    <tbody>
+   @foreach (var vb in ViewBag.Body) {
+        <tr>
+            @foreach (var db in vb) {
+                <td>
+                    @db
+                </td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>

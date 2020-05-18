@@ -16,23 +16,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("MAKE REQUEST | (DB9)", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="/Home/Index/" class="navbar-brand" 
+                   style="font-size: 30px; padding-left: 500px">
+                    NEW QUERY
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            @*<div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left: 300px;">
                     <li>@Html.ActionLink("TABLE CLUBS", "Index", "Clubs")</li>
                     <li>@Html.ActionLink("TABLE PLAYERS", "Index", "Players")</li>
                     <li>@Html.ActionLink("TABLE STADIUMS", "Index", "Stadiums")</li>
                     <li>@Html.ActionLink("TABLE GAMES SCHEDULE", "Index", "Gameschedule")</li>
                 </ul>
-            </div>
+            </div>*@
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Lab9(Roman Sydor FEI-22)</p>
         </footer>
     </div>
 
