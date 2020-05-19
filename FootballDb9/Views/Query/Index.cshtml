@@ -4,34 +4,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RESULT</h2>
 
-<table class="table table-bordered">
-    <thead>
-    @foreach (var vh in ViewBag.Header)
-    {
-        <tr class="success">
-            @foreach (var dh in vh)
+@if (ViewBag.Error != null)
+{
+    <h2>ERROR</h2>
+    <label class="has-error">@ViewBag.Error</label>
+}
+else
+{
+    <h2>RESULT</h2>
+    <table class="table table-bordered">
+        <thead>
+            @foreach (var vh in ViewBag.Header)
             {
-                <th>
-                    @dh
-                </th>
+                <tr class="success">
+                    @foreach (var dh in vh)
+                    {
+                        <th>
+                            @dh
+                        </th>
+                    }
+                </tr>
             }
-            </tr>
-    }
-    </thead>
-    <tbody>
-   @foreach (var vb in ViewBag.Body) {
-        <tr>
-            @foreach (var db in vb) {
-                <td>
-                    @db
-                </td>
+        </thead>
+        <tbody>
+            @foreach (var vb in ViewBag.Body)
+            {
+                <tr>
+                    @foreach (var db in vb)
+                    {
+                        <td>
+                            @db
+                        </td>
+                    }
+                </tr>
             }
-        </tr>
-    }
-    </tbody>
-</table>
-<div>
-    <a href="/Query/CSVSave" class="btn btn-success">Save result</a>
-</div>
+        </tbody>
+    </table>
+    <div>
+        <a href="/Query/CSVSave" class="btn btn-success">Save result</a>
+    </div>
+}
